@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonContent, IonHeader, IonTitle, IonToolbar } from '@ionic/angular/standalone';
+import { ActivatedRoute } from '@angular/router';
+import { PokemonService, PokemonDetails } from '../../services/pokemon.service';
+
 
 @Component({
   selector: 'app-pokemon-detail',
@@ -12,9 +15,25 @@ import { IonContent, IonHeader, IonTitle, IonToolbar } from '@ionic/angular/stan
 })
 export class PokemonDetailPage implements OnInit {
 
-  constructor() { }
+  public pokemon: PokemonDetails | null = null;
+
+  constructor(
+    private route: ActivatedRoute,
+    private pokemonService: PokemonService
+  ) { }
 
   ngOnInit() {
+    this.loadPokemonDetails();
   }
 
+  loadPokemonDetails() {
+    const pokemonId = this.route.snapshot.paramMap.get('id');
+
+    if (pokemonId) {
+      this.pokemonService.getPokemonDetails(pokemonId).subscribe(details => {
+        this.pokemon = details;
+        console.log('Detalhes recebidos:', this.pokemon);
+      });
+    }
+  }
 }

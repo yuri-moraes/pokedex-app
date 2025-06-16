@@ -1,8 +1,7 @@
-// src/app/pages/pokemon-list/pokemon-list.page.ts
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { IonicModule, InfiniteScrollCustomEvent } from '@ionic/angular'; // Importe InfiniteScrollCustomEvent
+import { IonicModule, InfiniteScrollCustomEvent } from '@ionic/angular';
 import { RouterLink } from '@angular/router';
 
 import { PokemonService, PokemonResult } from '../../services/pokemon.service';
