@@ -1,8 +1,8 @@
 # Pokédex App com Ionic e Angular
 
-<img src="media/home-desktop.png" alt="Tela de listagem de Pokémons" width="1920"/>
-### 🔗 **[Acesse a versão ao vivo do projeto aqui!](https://pokedex-app-three-black.vercel.app/)**
+[![Live Demo](https://img.shields.io/badge/Ver%20Projeto-Ao%20Vivo-brightgreen)](https://pokedex-app-three-black.vercel.app/)
 
+<img src="media/home-desktop.png" alt="Tela de listagem de Pokémons" width="100%"/>
 
 Este projeto é uma Pokédex moderna e responsiva, desenvolvida como um desafio técnico para demonstrar habilidades em desenvolvimento mobile híbrido. O objetivo foi criar uma aplicação funcional e bem-estruturada utilizando o framework Ionic com Angular. A abordagem de desenvolvimento priorizou um código limpo e legível, seguindo as melhores práticas do mercado, como a utilização de serviços para acesso a dados e componentes Standalone para modularidade.
 
@@ -27,26 +27,7 @@ O padrão de Injeção de Dependência foi usado para gerenciar os serviços de 
 
 ## 🎬 Funcionalidades em Ação
 
-<table>
-  <tr>
-    <td align="center"><strong>Lista Responsiva</strong></td>
-    <td align="center"><strong>Detalhes do Pokémon</strong></td>
-    <td align="center"><strong>Lista de Pokémons favoritos</strong></td>
-  </tr>
-  <tr>
-    <td align="center">
-      <img src="media/home.png" alt="Tela de listagem de Pokémons" width="300"/>
-    </td>
-    <td align="center">
-      <img src="media/details.png" alt="Tela de detalhes de um Pokémon" width="300"/>
-    </td>
-    <td align="center">
-      <img src="media/favor.png" alt="Tela de listagem de um Pokémons favoritados" width="300"/>
-    </td>
-  </tr>
-</table>
-
-### Sistema de Favoritos e Detalhes
+### Sistema de Favoritos e Navegação
 ![Demonstração do sistema de favoritos](media/favorites.gif)
 
 ### Lista Responsiva e Rolagem Infinita
@@ -56,7 +37,7 @@ O padrão de Injeção de Dependência foi usado para gerenciar os serviços de 
 
 1.  **Clone o repositório:**
     ```bash
-    git clone [git@github.com:yuri-moraes/pokedex-app.git](git@github.com:yuri-moraes/pokedex-app.git)
+    git clone [https://github.com/yuri-moraes/pokedex-app.git](https://github.com/yuri-moraes/pokedex-app.git)
     ```
 2.  **Navegue até a pasta do projeto:**
     ```bash
