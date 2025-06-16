@@ -1,13 +1,28 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>pokemon-list</ion-title>
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>
+      Pokédex
+    </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">pokemon-list</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content>
+
+  <div *ngIf="pokemons.length === 0" class="ion-text-center ion-padding-top">
+    <ion-spinner name="crescent"></ion-spinner>
+    <p>Carregando Pokémons...</p>
+  </div>
+
+  <ion-list *ngIf="pokemons.length > 0">
+    <ion-item *ngFor="let pokemon of pokemons" [routerLink]="['/pokemons', pokemon.id]" button detail>
+      <ion-avatar slot="start">
+        <img [src]="pokemon.image" />
+      </ion-avatar>
+      <ion-label class="ion-text-capitalize">
+        <h2>{{ pokemon.name }}</h2>
+        <p>#{{ pokemon.id }}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
 </ion-content>
