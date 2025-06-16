@@ -1,4 +1,5 @@
-import { Routes } from '@angular/router';
+import { NgModule } from '@angular/core';
+import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 export const routes: Routes = [
   {
@@ -7,7 +8,23 @@ export const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'pokemons',
     pathMatch: 'full',
   },
+  {
+    path: 'pokemons',
+    loadComponent: () => import('./pages/pokemon-list/pokemon-list.page').then( m => m.PokemonListPage)
+  },
+  {
+    path: 'pokemons/:id',
+    loadComponent: () => import('./pages/pokemon-detail/pokemon-detail.page').then( m => m.PokemonDetailPage)
+  },
 ];
+
+@NgModule({
+  imports: [
+    RouterModule.forRoot(routes, {preloadingStrategy: PreloadAllModules})
+  ],
+  exports: [RouterModule]
+})
+export class AppRoutingModule {}
