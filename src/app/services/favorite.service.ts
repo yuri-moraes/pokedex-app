@@ -10,9 +10,7 @@ export class FavoriteService {
   private _storage: Storage | null = null;
   private favorites: number[] = [];
 
-  constructor(private storage: Storage) {
-    this.init();
-  }
+  constructor(private storage: Storage) {  }
 
   async init() {
     this._storage = await this.storage.create();
