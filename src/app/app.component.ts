@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { IonApp, IonRouterOutlet } from '@ionic/angular/standalone';
 import { FavoriteService } from './services/favorite.service';
 import { addIcons } from 'ionicons';
-import { star, starOutline } from 'ionicons/icons';
+import { star, starOutline, heart } from 'ionicons/icons';
 
 @Component({
   selector: 'app-root',
@@ -12,7 +12,7 @@ import { star, starOutline } from 'ionicons/icons';
 })
 export class AppComponent {
   constructor(private favoriteService: FavoriteService) {
-    addIcons({ star, starOutline });
+    addIcons({ star, starOutline, heart });
     this.initializeApp();
   }
 

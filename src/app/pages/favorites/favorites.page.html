@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/pokemons"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Meus Favoritos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <div *ngIf="isLoading" class="ion-text-center">
+    <ion-spinner name="crescent"></ion-spinner>
+  </div>
+
+  <div *ngIf="!isLoading && favoritePokemons.length === 0" class="ion-text-center">
+    <h3>Nenhum favorito ainda!</h3>
+    <p>Clique na estrela de um Pokémon para adicioná-lo aqui.</p>
+  </div>
+
+  <ion-grid *ngIf="!isLoading && favoritePokemons.length > 0">
+    <ion-row>
+      <ion-col *ngFor="let pokemon of favoritePokemons" size="12" size-sm="6" size-md="4" size-lg="3">
+        <ion-card class="pokemon-card" [routerLink]="['/pokemons', pokemon.id]" button>
+          <ion-button fill="clear" class="favorite-button" (click)="$event.stopPropagation(); toggleAndReload(pokemon.id)">
+            <ion-icon slot="icon-only" color="warning" name="star"></ion-icon>
+          </ion-button>
+          <img [src]="pokemon.sprites.other['official-artwork'].front_default" [alt]="pokemon.name" />
+          <ion-card-header class="ion-text-center ion-text-capitalize">
+            <ion-card-title>{{ pokemon.name }}</ion-card-title>
+            <ion-card-subtitle>#{{ pokemon.id }}</ion-card-subtitle>
+          </ion-card-header>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>

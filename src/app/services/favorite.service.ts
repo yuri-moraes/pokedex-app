@@ -17,6 +17,10 @@ export class FavoriteService {
     this.favorites = await this._storage.get(FAVORITES_KEY) || [];
   }
 
+  public get favoriteIds(): number[] {
+    return this.favorites;
+  }
+
   isFavorite(pokemonId: number): boolean {
     return this.favorites.includes(pokemonId);
   }

@@ -19,6 +19,10 @@ export const routes: Routes = [
     path: 'pokemons/:id',
     loadComponent: () => import('./pages/pokemon-detail/pokemon-detail.page').then( m => m.PokemonDetailPage)
   },
+  {
+    path: 'favorites',
+    loadComponent: () => import('./pages/favorites/favorites.page').then( m => m.FavoritesPage)
+  },
 ];
 
 @NgModule({
