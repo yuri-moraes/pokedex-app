@@ -1,6 +1,7 @@
 # Pokédex App com Ionic e Angular
 
 <img src="media/home-desktop.png" alt="Tela de listagem de Pokémons" width="1920"/>
+### 🔗 **[Acesse a versão ao vivo do projeto aqui!](https://pokedex-app-three-black.vercel.app/)**
 
 
 Este projeto é uma Pokédex moderna e responsiva, desenvolvida como um desafio técnico para demonstrar habilidades em desenvolvimento mobile híbrido. O objetivo foi criar uma aplicação funcional e bem-estruturada utilizando o framework Ionic com Angular. A abordagem de desenvolvimento priorizou um código limpo e legível, seguindo as melhores práticas do mercado, como a utilização de serviços para acesso a dados e componentes Standalone para modularidade.
