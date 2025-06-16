@@ -13,24 +13,34 @@
     <p>Carregando Pokémons...</p>
   </div>
 
-  <ion-list *ngIf="pokemons.length > 0">
-    <ion-item *ngFor="let pokemon of pokemons" [routerLink]="['/pokemons', pokemon.id]" button detail>
-    <ion-avatar slot="start">
-      <img [src]="pokemon.image" />
-    </ion-avatar>
-    <ion-label class="ion-text-capitalize">
-      <h2>{{ pokemon.name }}</h2>
-      <p>#{{ pokemon.id }}</p>
-    </ion-label>
-    <ion-button fill="clear" slot="end" (click)="$event.stopPropagation(); favoriteService.toggleFavorite(pokemon.id)">
-      <ion-icon
-        slot="icon-only"
-        color="warning"
-        [name]="favoriteService.isFavorite(pokemon.id) ? 'star' : 'star-outline'">
-      </ion-icon>
-    </ion-button>
-  </ion-item>
-  </ion-list>
+  <ion-grid *ngIf="pokemons.length > 0">
+    <ion-row>
+      <ion-col
+        *ngFor="let pokemon of pokemons"
+        size="12"
+        size-sm="6"
+        size-md="4"
+        size-lg="3">
+
+        <ion-card class="pokemon-card" [routerLink]="['/pokemons', pokemon.id]" button>
+          <ion-button fill="clear" class="favorite-button" (click)="$event.stopPropagation(); favoriteService.toggleFavorite(pokemon.id)">
+            <ion-icon
+              slot="icon-only"
+              color="warning"
+              [name]="favoriteService.isFavorite(pokemon.id) ? 'star' : 'star-outline'">
+            </ion-icon>
+          </ion-button>
+
+          <img [src]="pokemon.image" [alt]="pokemon.name" />
+          <ion-card-header class="ion-text-center ion-text-capitalize">
+            <ion-card-title>{{ pokemon.name }}</ion-card-title>
+            <ion-card-subtitle>#{{ pokemon.id }}</ion-card-subtitle>
+          </ion-card-header>
+        </ion-card>
+
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 
    <ion-infinite-scroll (ionInfinite)="loadMore($event)">
     <ion-infinite-scroll-content
