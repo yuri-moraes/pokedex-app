@@ -5,6 +5,7 @@ import { IonicModule, InfiniteScrollCustomEvent } from '@ionic/angular';
 import { RouterLink } from '@angular/router';
 
 import { PokemonService, PokemonResult } from '../../services/pokemon.service';
+import { FavoriteService } from '../../services/favorite.service';
 
 @Component({
   selector: 'app-pokemon-list',
@@ -18,15 +19,12 @@ export class PokemonListPage implements OnInit {
   public pokemons: PokemonResult[] = [];
   private offset = 0;
 
-  constructor(private pokemonService: PokemonService) { }
+  constructor(private pokemonService: PokemonService, public favoriteService: FavoriteService) { }
 
   ngOnInit() {
     this.loadPokemons();
   }
 
-  /**
-   * Carrega a leva inicial de pokémons.
-   */
   loadPokemons() {
     this.pokemonService.getPokemons(this.offset).subscribe(response => {
       const processedResults = this.processPokemonResults(response.results);
@@ -34,11 +32,6 @@ export class PokemonListPage implements OnInit {
     });
   }
 
-  /**
-   * Este método é chamado pelo evento (ionInfinite) do nosso HTML.
-   * Ele carrega a próxima leva de pokémons.
-   * @param event O evento disparado pelo ion-infinite-scroll.
-   */
   loadMore(event: any) {
     this.offset += 25;
 
@@ -55,11 +48,6 @@ export class PokemonListPage implements OnInit {
     });
   }
 
-  /**
-   * Centraliza a lógica de processamento dos resultados da API.
-   * @param results A lista de pokémons vinda da API.
-   * @returns A lista de pokémons com ID e imagem.
-   */
   private processPokemonResults(results: PokemonResult[]): PokemonResult[] {
     return results.map(p => {
       const urlParts = p.url.split('/');

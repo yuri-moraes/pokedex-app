@@ -1,10 +1,10 @@
-// src/app/pages/pokemon-detail/pokemon-detail.page.ts
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 import { ActivatedRoute } from '@angular/router';
 import { PokemonService, PokemonDetails } from '../../services/pokemon.service';
+import { FavoriteService } from '../../services/favorite.service';
 
 @Component({
   selector: 'app-pokemon-detail',
@@ -18,7 +18,8 @@ export class PokemonDetailPage implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private pokemonService: PokemonService
+    private pokemonService: PokemonService,
+    public favoriteService: FavoriteService
   ) { }
 
   ngOnInit() {

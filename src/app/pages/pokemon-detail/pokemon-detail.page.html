@@ -4,6 +4,16 @@
       <ion-back-button defaultHref="/pokemons"></ion-back-button>
     </ion-buttons>
     <ion-title class="ion-text-capitalize">{{ pokemon?.name || 'Carregando...' }}</ion-title>
+
+    <ion-buttons slot="end" *ngIf="pokemon">
+      <ion-button (click)="favoriteService.toggleFavorite(pokemon.id)">
+        <ion-icon
+          slot="icon-only"
+          [name]="favoriteService.isFavorite(pokemon.id) ? 'star' : 'star-outline'">
+        </ion-icon>
+      </ion-button>
+    </ion-buttons>
+
   </ion-toolbar>
 </ion-header>
 

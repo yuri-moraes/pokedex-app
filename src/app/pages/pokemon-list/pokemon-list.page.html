@@ -15,14 +15,21 @@
 
   <ion-list *ngIf="pokemons.length > 0">
     <ion-item *ngFor="let pokemon of pokemons" [routerLink]="['/pokemons', pokemon.id]" button detail>
-      <ion-avatar slot="start">
-        <img [src]="pokemon.image" />
-      </ion-avatar>
-      <ion-label class="ion-text-capitalize">
-        <h2>{{ pokemon.name }}</h2>
-        <p>#{{ pokemon.id }}</p>
-      </ion-label>
-    </ion-item>
+    <ion-avatar slot="start">
+      <img [src]="pokemon.image" />
+    </ion-avatar>
+    <ion-label class="ion-text-capitalize">
+      <h2>{{ pokemon.name }}</h2>
+      <p>#{{ pokemon.id }}</p>
+    </ion-label>
+    <ion-button fill="clear" slot="end" (click)="$event.stopPropagation(); favoriteService.toggleFavorite(pokemon.id)">
+      <ion-icon
+        slot="icon-only"
+        color="warning"
+        [name]="favoriteService.isFavorite(pokemon.id) ? 'star' : 'star-outline'">
+      </ion-icon>
+    </ion-button>
+  </ion-item>
   </ion-list>
 
    <ion-infinite-scroll (ionInfinite)="loadMore($event)">
