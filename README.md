@@ -1,5 +1,8 @@
 # Pokédex App com Ionic e Angular
 
+<img src="media/home-desktop.png" alt="Tela de listagem de Pokémons" width="500"/>
+
+
 Este projeto é uma Pokédex moderna e responsiva, desenvolvida como um desafio técnico para demonstrar habilidades em desenvolvimento mobile híbrido. O objetivo foi criar uma aplicação funcional e bem-estruturada utilizando o framework Ionic com Angular, focando na componentização, separação de responsabilidades e em uma experiência de usuário fluida. A abordagem de desenvolvimento priorizou um código limpo e legível, seguindo as melhores práticas do mercado, como a utilização de serviços para acesso a dados e componentes Standalone para modularidade.
 
 O padrão de Injeção de Dependência foi usado para gerenciar os serviços de forma desacoplada, enquanto a programação reativa com RxJS foi empregada para lidar com a comunicação assíncrona com a PokeAPI. A interface foi construída para ser intuitiva e totalmente responsiva, adaptando-se a diferentes tamanhos e orientações de tela. O projeto também inclui funcionalidades avançadas, como um sistema de favoritos com persistência de dados no dispositivo. O resultado é uma demonstração prática de um ciclo de desenvolvimento completo, da concepção à documentação.
@@ -27,6 +30,7 @@ O padrão de Injeção de Dependência foi usado para gerenciar os serviços de 
   <tr>
     <td align="center"><strong>Lista Responsiva</strong></td>
     <td align="center"><strong>Detalhes do Pokémon</strong></td>
+    <td align="center"><strong>Lista de Pokémons favoritos</strong></td>
   </tr>
   <tr>
     <td align="center">
