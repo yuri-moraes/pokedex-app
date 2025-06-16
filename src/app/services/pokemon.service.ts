@@ -23,6 +23,9 @@ export interface PokemonDetails {
   weight: number;
   sprites: {
     front_default: string;
+    back_default: string;
+    front_shiny: string;
+    back_shiny: string;
     other: {
       'official-artwork': {
         front_default: string;
@@ -40,6 +43,7 @@ export interface PokemonDetails {
     };
   }[];
 }
+
 
 
 @Injectable({

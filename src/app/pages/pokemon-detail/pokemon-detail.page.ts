@@ -1,20 +1,19 @@
+// src/app/pages/pokemon-detail/pokemon-detail.page.ts
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { IonContent, IonHeader, IonTitle, IonToolbar } from '@ionic/angular/standalone';
+import { IonicModule } from '@ionic/angular';
 import { ActivatedRoute } from '@angular/router';
 import { PokemonService, PokemonDetails } from '../../services/pokemon.service';
-
 
 @Component({
   selector: 'app-pokemon-detail',
   templateUrl: './pokemon-detail.page.html',
   styleUrls: ['./pokemon-detail.page.scss'],
   standalone: true,
-  imports: [IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule]
+  imports: [IonicModule, CommonModule, FormsModule]
 })
 export class PokemonDetailPage implements OnInit {
-
   public pokemon: PokemonDetails | null = null;
 
   constructor(
